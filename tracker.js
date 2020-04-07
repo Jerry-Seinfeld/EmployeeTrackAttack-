@@ -2,6 +2,7 @@ var mysql = require("mysql");
 var inquirer = require("inquirer");
 const logo = require("asciiart-logo");
 
+// Couldn't test the bonus section due to MySQL issues.
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -11,7 +12,7 @@ var connection = mysql.createConnection({
   // username
   user: "root",
 
-  // password
+  // my password
   password: "abcd1234",
   database: "employee_DB"
 });
@@ -48,7 +49,7 @@ function start(){
         .prompt({
         name: "start",
         type: "list",
-        message: "Welcome, please add DEPARTMENTS and ROLES to begin. Once you have added your desired departments and roles, continue to the Employee Tab.",
+        message: "Add DEPARTMENTS and ROLES to begin, then continue to the Employee section.",
         choices: ["Add Department", "Add Role","Employees Tab","EXIT",]
         })
         .then(function(answer){
@@ -99,12 +100,12 @@ function addRole(){
         .prompt([{
             name:"role_title",
             type: "input",
-            message:"What is the title of the ROLE you would like to add?"
+            message:"What is the title of the ROLE you're adding?"
         },
         {
             name:"role_salary",
             type: "input",
-            message: "What salary amount is designated to this role?"
+            message: "Enter a salary amount that is designated to this role?"
         },
         {
             name:"department_id",
@@ -139,7 +140,7 @@ function employeeTab(){
         .prompt({
         name: "employeeTab_start",
         type: "list",
-        message: "What action would you like to take?",
+        message: "What would you like to do next?",
         choices: ["Add Employee",
                 "View All Employees",
                 "View All Employees by Department",
@@ -151,7 +152,7 @@ function employeeTab(){
         })
         .then(function(answer) {
             if (answer.employeeTab_start === "Add Employee") {
-                // console.table - to look better for a list of ees 
+                
                 addEes();
             }
             else if(answer.employeeTab_start === "View All Employees") {
@@ -169,7 +170,7 @@ function employeeTab(){
             else if(answer.employeeTab_start === "Update Employee Role") {
                 updateEeRole();
             }
-            else if(answer.employeeTab_start === "Update Employee Manager BONUS") {
+            else if(answer.employeeTab_start === "Update Employee Manager") {
                 updateEeManager();
             }
              else{
