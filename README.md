@@ -3,17 +3,4 @@
 
 
 ## Description
-
-
-
-## Table of Contents
-* [Installation](#installation) 
-* [License](#license)
-* [Questions](#questions)
-
-## Installation
-To install necessary dependencies, run the following command: 
-
-    npm install
-
-## Questions 
+This command-line application allows users to create departments, roles, add employees as well as the ability to view its departments, roles, and employees. 
