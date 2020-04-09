@@ -232,7 +232,8 @@ function viewAllEes(){
 }
 
 function viewEesByDept(){
-
+    
+    
     inquirer
         .prompt({
             name:"department_Choice",
@@ -253,6 +254,7 @@ function viewEesByDept(){
 }
 
 function viewEesbyManager(){
+    
     inquirer
         .prompt({
             name:"manager_Choice",
@@ -273,6 +275,7 @@ function viewEesbyManager(){
 }
 
 function removeEes(){
+    
     inquirer
         .prompt({
             name:"deleted_employee",
